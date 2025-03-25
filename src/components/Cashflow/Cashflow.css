@@ -1,0 +1,24 @@
+.cf-label {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.25rem;
+    font-weight: 300;
+    color: black;
+    align-items: center;
+
+}
+
+.cf-input {
+    display: flex;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    background-color: #ffffff7a;
+    height: 25px;
+    font-size: medium;
+    align-items: center;
+    margin: 0 auto;
+    width: 70%;
+}

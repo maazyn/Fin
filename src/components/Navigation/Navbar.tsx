@@ -11,7 +11,7 @@ const Navbar = () => {
     const { user } = useAuth();
     return (
         <nav className="flex flex-row bg-transparent h-[33px] w-full items-center justify-end ">
-            <div className="bg-white flex flex-row max-w-[300px] w-[30vw] min-w-[210px] items-center justify-between h-full rounded-md">
+            <div className="bg-white flex flex-row w-full lg:w-[300px] md:w-[210px] items-center justify-between h-full rounded-md transition-all duration-300">
                 <NavLink className="logo ml-3 text-black" to="/dashboard">
                     <img className="nav-app-logo" src="/assets/fin-logo.png" alt="Logo" />
                 </NavLink>
@@ -25,9 +25,6 @@ const Navbar = () => {
                         <NavLink to={"/settings"} className="bg-transparent self-center text-black" >
                             <FiSettings className="w-[20px] h-[19px] hover:scale-110"  />
                         </NavLink>
-                        {/* <NavLink to={"/saved"} className="bg-transparent self-center" >
-                            <FaRegUser className="w-[18px] h-[18px]"  />
-                        </NavLink> */}
                     </>
                     )}
                 </div>
