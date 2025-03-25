@@ -1,6 +1,6 @@
 // src/services/firebase.ts
 import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, onAuthStateChanged } from "firebase/auth";
 
 const firebaseConfig = {
     apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -14,3 +14,14 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
+// onAuthStateChanged(auth, (user) => {
+//     if (user) {
+//         const uid = user.uid;
+//         // return user.toJSON();
+//       // https://firebase.google.com/docs/reference/js/auth.user
+//       // ...
+//     } else {
+//       // User is signed out
+//       // ...
+//     }
+// });

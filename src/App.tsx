@@ -1,36 +1,52 @@
-// src/App.tsx
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider, useAuth } from "./hooks/useAuth";
+import {Layout, SplashPage, DashboardPage, SavedPage } from "./components";
 
-const App = () => (
-  <AuthProvider>
-    <MainContent />
-  </AuthProvider>
-);
 
-const MainContent = () => {
-  const { user, login, logout } = useAuth();
+const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
+  const { user } = useAuth();
+  return user ? children : <Navigate to="/" />;
+};
+
+const AppRoutes = () => {
+  const { user } = useAuth();
 
   return (
-    <div className="flex flex-col items-center justify-center">
-      {user ? (
-        <div className="p-6 bg-blue rounded-lg shadow-md">
-          <h1 className="text-2xl font-semibold mb-4 text-white">Welcome, {user.displayName}</h1>
-          <button
-            className="bg-blue-500 text-white px-4 py-2 rounded"
-            onClick={logout}
-          >
-            Logout
-          </button>
-        </div>
-      ) : (
-        <button
-          className="bg-blue-500 text-white px-4 py-2 rounded"
-          onClick={login}
-        >
-          Sign in with Google
-        </button>
-      )}
-    </div>
+    <Routes>
+      <Route path="/" element={user ? <Navigate to="/dashboard" /> : <SplashPage />} />
+
+      <Route
+        path="/dashboard"
+        element={
+          <ProtectedRoute>
+            <Layout>
+              <DashboardPage />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/saved"
+        element={
+          <ProtectedRoute>
+            <Layout>
+              <SavedPage />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+    </Routes>
+  );
+};
+
+const App = () => {
+  return (
+    <AuthProvider>
+      <BrowserRouter>
+        <AppRoutes />
+      </BrowserRouter>
+    </AuthProvider>
   );
 };
 

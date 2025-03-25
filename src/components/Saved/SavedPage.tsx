@@ -1,10 +1,10 @@
 
-const CashflowForm = () => {
-
+const SavedPage = () => {
     return (
         <div>
             <p>Hello</p>
         </div>
     );
 }
-export default CashflowForm;
+
+export default SavedPage;
