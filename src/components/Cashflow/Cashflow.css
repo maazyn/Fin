@@ -1,0 +1,65 @@
+
+    .cf-input {
+    display: flex;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    background-color: #ffffff7a;
+    height: 25px;
+    font-size: medium;
+    align-items: center;
+    margin: 0 auto;
+    width: 70%;
+    margin-top: 5px;
+    color: black;
+
+}
+
+.buttonContainer {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin: 0 auto;
+}
+
+.submit-button, .cancel-button {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    height: 30px;
+    flex: 1;
+    max-width: 110px;
+    min-width: 55px;
+    padding: 0 5px 0 5px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    background-color: rgba(90, 75, 47, 0.455);
+}
+
+.submit-button:hover, .cancel-button:hover {
+    background-color: rgba(56, 45, 22, 0.599);
+
+}
+
+.buttonContainer2 {
+    display: flex;
+    width: 50%;
+    height: 25px;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin: 0 auto;
+    background-color: rgba(90, 75, 47, 0.455);
+    /* text-decoration: underline; */
+    font-size: 13px;
+
+}
+
+.buttonContainer2:hover {
+    background-color: rgba(56, 45, 22, 0.599);
+
+}
