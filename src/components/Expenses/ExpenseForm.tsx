@@ -1,5 +1,10 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import { AuthProvider, useAuth } from "../../hooks/useAuth";
+import OpenModalButton from "../OpenModalButton/OpenModalButton";
+import AddNewCategoryModal from "./AddNewCategoryModal";
+
+// import { useModal } from "../../Context/Modal";
+
 import "../Cashflow/Cashflow.css"
 
 interface FormData {
@@ -134,6 +139,12 @@ const ExpenseForm = () => {
                 {/* <div className='buttonContainer2'>
                     <button type="button" className="add-button" onClick={addField}> New Category</button>
                 </div> */}
+                {(
+                    <OpenModalButton
+                        buttonText="Add new category"
+                        modalComponent={<AddNewCategoryModal/>}
+                    />
+                )}
             </form>
 
 

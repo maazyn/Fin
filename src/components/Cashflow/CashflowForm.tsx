@@ -1,5 +1,7 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import { AuthProvider, useAuth } from "../../hooks/useAuth";
+import OpenModalButton from "../OpenModalButton/OpenModalButton"
+// import {AddNewCategoryModal } from "."
 import "./Cashflow.css"
 
 interface FormData {
@@ -78,11 +80,14 @@ const CashflowForm = () => {
                     <button onClick={handleClear} className="cancel-button">Clear</button>
                 </div>
             </form>
+            {/* {(
+                <OpenModalButton
+                buttonText="New Category"
+                modalComponent={<AddNewCategoryModal/>}
+                />
+            )} */}
 
 
-            <div>
-                
-            </div>
         </div>
     );
 }

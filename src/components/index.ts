@@ -5,3 +5,4 @@ export { default as ExpenseForm } from "./Expenses";
 export { default as DashboardPage } from "./Dashboard";
 export { default as SavedPage } from "./Saved";
 export { default as Layout } from "./Layout";
+export { default as OpenModalButton } from "./OpenModalButton";
